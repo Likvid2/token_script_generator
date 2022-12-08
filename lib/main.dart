@@ -108,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void _generateScriptFiles() {
     _processedFunctions.forEach((processedFunction) {
       final filePath =
-          "$directoryPath${processedFunction.functionName.toLowerCase()}.js";
+          "$directoryPath${processedFunction.functionName.toLowerCase()}.en.js";
       File(filePath).createSync(recursive: true);
       _writeFunctionSpecificJsFile(File(filePath), processedFunction);
     });
