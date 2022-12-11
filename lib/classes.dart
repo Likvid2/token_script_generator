@@ -31,8 +31,8 @@ class jsInterpolator {
   String interpolate() {
     List<String> inputStringList = [];
     _processedFunction.functionParams.forEach((param) {
-      inputStringList.add(
-          "<input id=\"${param.name}\" type=\"${determineInputType(param.type)}\">");
+      inputStringList.add('''<span><bold><h3>${param.name}:</h3></bold></span>
+            <input id="${param.name}" type="${determineInputType(param.type)}">''');
     });
     String concatenatedInputString = "";
     inputStringList.forEach((element) {
@@ -50,7 +50,6 @@ class Token {
         return`
         <div class="ui container">
           <div class="ui segment">
-            <span><bold><h3>${_processedFunction.functionName}</h3></bold></span>
             $concatenatedInputString
           </div>
         </div>
